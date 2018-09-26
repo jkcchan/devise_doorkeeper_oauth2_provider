@@ -1,0 +1,14 @@
+<h1>Home#index</h1>
+<% if not current_user == '' %>
+  <p>Signed in as <%= current_user.inspect %> </p>
+  <%= link_to('User Logout', "/users/sign_out", method: :delete) %> 
+<% else %>       
+  <%= link_to('User Login', "/users/sign_in", method: :get) %> 
+<% end %>
+<br/>
+<% if not current_admin == '' %>
+  <p>Signed in as <%= current_admin.inspect %> </p>
+  <%= link_to('Admin Logout', "/admins/sign_out", method: :delete) %> 
+<% else %>       
+  <%= link_to('Admin Login', "/admins/sign_in", method: :get) %> 
+<% end %>  
